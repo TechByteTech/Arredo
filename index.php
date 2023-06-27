@@ -58,7 +58,7 @@ include('mysql-connection.php');
  float:left !important;
  margin-left:2% !important;
  margin-top:20px;
-
+ color: ;
 }
 
 
@@ -190,83 +190,72 @@ margin-left: 2%;
 
 <div id="trending-item-body">
 
-  <center>
-  <div  id="super-profile-body" style="white-space:nowrap;overflow-x:auto;padding-top:10px;padding-bottom:10px;padding-right:10px;">
+<div  id="super-profile-body" style="white-space:nowrap;overflow-x:auto;padding-top:10px;padding-bottom:10px;padding-right:10px;">
 
-  <?php
-
-
-    $i=0;
-    mysqli_data_seek($select_shopItem,0);
-    while($data=mysqli_fetch_array($select_shopItem)){
-
-      $name=$data['itemname'];
-      $description=$data['itemdescription'];
-      $price=$data['itemprice'];
-      $img=$data['itemimg'];
-      $itemid=$data['itemid'];
+<?php
 
 
+  $select_shopItem=mysqli_query($con,"select * from shopitem order by rand() limit 3");
 
-    ?>
+  $i=0;
+  while($data=mysqli_fetch_array($select_shopItem)){
 
-    <A href="item.php?itemid=<?php echo $itemid ?>">
-       <div id="profile-body" style="    background:#908c9438;margin-left:10px;display:inline-block;width: 270px;height:312px;padding: 10px 5px 5px; top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
-         <div id="profile" style="float: left;width:100%;">
-      <img src="photos/<?php echo $img; ?>" style="width:120px;
-          height:120px;
-
-          margin-top: 5px;
-
-          object-fit: contain;">
-        </div>
-
-
-  <br>
-  <div id="product-name" style="color:black;float:left;width:98%;padding:10px;font-size:15px;overflow: hidden;font-weight:bold;">
-  <?php echo $name; ?>
-
-  </div>
-  <div id="person-rating" style="color:black;font-weight:Bold;float:left;width:100%;width:100%;position:relative;">
+    $name=$data['itemname'];
+    $description=$data['itemdescription'];
+    $price=$data['itemprice'];
+    $img=$data['itemimg'];
+    $itemid=$data['itemid'];
 
 
 
-  </div>
-  <div id="person-description" style="
-  color: #7d7979;;
-  height: 68px;
-  overflow: hidden;
-  width: 100%;
-  padding: 10px;
-  /* padding: 17px; */
-  font-size: 14px;
-  white-space: normal;
-  ">
-  <?php echo $description; ?>
-  </div>
+ ?>
 
-  <div id="product-price" style="color:black;float:left;width:100%;padding:10px;font-size:25px;">
-  ₹<?php echo $price; ?>
+  <A href="item.php?itemid=<?php echo $itemid ?>">
+     <div id="profile-body" style="    background:#b88ae912;margin-left:10px;display:inline-block;width:370px;height:390px;padding: 10px 5px 5px; top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
+       <div id="profile" style="float: left;width:100%;">
+    <img src="photos/<?php echo $img; ?>" style="width:200px;
+        height:200px;
+
+        margin-top: 5px;
+
+        object-fit: contain;">
+      </div>
+
+
+<br>
+<div id="product-name" style="color:black;float:left;width:98%;padding:10px;font-size:25px;overflow: hidden;">
+<?php echo $name; ?>
+
+</div>
+<div id="person-rating" style="color:black;font-weight:Bold;float:left;width:100%;width:100%;position:relative;">
+
+
+
+</div>
+
+
+<div id="product-price" style="color:black;float:left;width:100%;padding:10px;font-size:25px;">
+₹<?php echo $price; ?>
+
+</div>
 
   </div>
+</a>
 
-    </div>
-  </a>
-
-  <?php
-  $i++;
-  if($i==5){
-    break;
-  }
-  }
+<?php
+$i++;
+if($i==5){
+  break;
+}
+}
 
 
-   ?>
+ ?>
 
 
 
-  </div>
-  </center>
+</div>
+</center>
 
 </div>
 <br><br>
@@ -567,11 +556,29 @@ $i++;
 
 
       </style>
-<br><br>
 
+
+
+    
+		<!--footer end-->
+    <section class="">
+  <!-- Footer -->
+  <footer class="bg-secondary text-white text-center">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+
+      
+      <img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:100px;">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="width:500px;">
+          <h5 class="text-uppercase">Connects us on</h5>
+
+          
     <div id="social-media-contact" style="height:80px;">
       <div style="text-align:center;font-weight:bold;color:Black;">
-        Connects us on
+      Footer Content
       </div>
 
       <div class="social-icons">
@@ -579,17 +586,69 @@ $i++;
         <a href="#" class="instagram" ><i class="fa fa-instagram"></i></a>
         <a href="https://wa.me/919810410995" class="whatsapp" ><i class="fa fa-whatsapp"></i></a>
         <a href="https://wa.me/919810410995" class="youtube" ><i class="fa fa-youtube"></i></a>
-
 </div>
 
 
-
+  <p style="color:black;">address:bharati vidyapeeth college of engg.</p>
     </div>
+        </div>
+        <!--Grid column-->
 
-    <br><br><br><br>
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
 
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
 
-		<!--footer end-->
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</section>
 
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
 

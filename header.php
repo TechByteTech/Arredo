@@ -29,7 +29,7 @@
       height: auto;
       font-size: 22px;
       font-style: none;
-
+      margin-left: -20px;
       float: left;
 
     }
@@ -93,6 +93,9 @@
         -webkit-tap-highlight-color: transparent;
     }
 
+
+    
+
   </style>
 
   <script>
@@ -141,7 +144,7 @@
         width:10%;
       }
       #header-text{
-        width:20%;
+        width:auto;
          margin-top: -10px;font-size:40px;
       }
 
@@ -156,7 +159,7 @@
         display:block;
       }
       #header-text{
-        width:70%;
+        width:90%;
          margin-top: -5px;font-size:30px;
       }
       #menu-list-data{
@@ -198,7 +201,36 @@
 
 
 
-  </style>
+    /* CSS for the dropdown menu */
+    .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+</style>
 
 
 <header style="width:100%;overflow:auto;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);">
@@ -218,21 +250,24 @@
 
     <div id="header-text" style="" >
       <a href="index.php">
-    <center style="color:white;font-weight:bold;user-select:none;"><img src="photos/arredo-logo.png" style="object-fit:contain;height:80px;width:80px;"> </center>
+    <center style="color:white;font-weight:bold;user-select:none;"><img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:80px;"> </center>
     </a>
     </div>
-
-    <div id="menu-list-data" style="width:60%;float:left;height:70px;padding-top:20px;font-weight:bold;text-transform: uppercase;
+    
+    <div id="menu-list-data" style="width:45%;float:left;height:70px;padding-top:30px;padding-left:70px;margin-left:44px;font-weight:bold;text-transform: uppercase;
     letter-spacing: 1px;font-family:arial;">
     <center>
+      
       <a href="myorder.php">
       <div id="menu-list-sub">
           Orders
       </div>
     </a>
-      <div id="menu-list-sub">
+      <!-- <div id="menu-list-sub">
         Category
-      </div>
+      </div> -->
+
+
       <div id="menu-list-sub">
         Blog
       </div>
@@ -242,24 +277,45 @@
       </div>
     </a>
 
+
+    <div class="dropdown">
+  <span id="menu-list-sub">Category</span>
+  <div class="dropdown-content">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+  </div>
+</div>
+    
+    
+    
+
   </center>
     </div>
+   
+   
 
-    <div id="msg-body" style="    width: 10%;
-    float: left;">
+    <div id="msg-body" style="    width: 30%;float: right;height:-70px; padding-top:25px;">
+    <!--dropdown-->
+    <div class="topnav">
+    <div class="search-container">
+    <form action="#">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <div id="msg-body" style="    width: 30%;float: right;">
     <a href="cart.php">
-      <div id="msg-btn-icon" class="material-icons" style="color:#7c150c;width: 100%;
-    height: 100%;
-    padding-top: 20px;
-    font-size: 30px;
-    padding-left: 20px;" >
+      <div id="msg-btn-icon" class="material-icons" style="color:#7c150c;width: 100%;height: 100%;padding-top: 2px;font-size: 30px;padding-left: 20px;" >
         shopping_cart
       </div>
 
     </a>
-
-    </div>
+</div>
+    </form>
+</div>
   </div>
+</div>
+    
+  
 
 <div id="menu-body" style="background:white; ">
   <div id="menu-close-icon" style="width:100%;height:40px;background:white;">
