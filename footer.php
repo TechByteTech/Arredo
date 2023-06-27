@@ -45,9 +45,9 @@
 
 
 
-    <section class="">
+    <section class="" >
   <!-- Footer -->
-  <footer class="bg-secondary text-white text-center">
+  <footer class="bg-secondary text-white text-center" style="height:300px;">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
@@ -60,7 +60,7 @@
           <h5 class="text-uppercase">Connects us on</h5>
 
           
-    <div id="social-media-contact" style="height:80px;">
+    <div id="social-media-contact" style="height:80px; ;">
       <div style="text-align:center;font-weight:bold;color:Black;">
       Footer Content
       </div>
@@ -125,7 +125,8 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:45px;">
       © 2020 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>

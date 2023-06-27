@@ -512,7 +512,7 @@ $i++;
 
       
 
-
+   <br>
     <?php
 include('footer.php');
 // include('home-page-slider.php');
