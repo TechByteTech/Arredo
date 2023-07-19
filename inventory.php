@@ -359,6 +359,16 @@ display: -webkit-box;
           </style>
 
 
+          <script>
+          function test(i){
+
+            $("#continue-loading"+i).show();
+            $("#continue"+i).hide();
+            //window.location="payment.php";
+          }
+
+          </script>
+
                     <div id="new-order-body">
 
                     <center>  <span style="font-size:25px;padding:3%;">INVENTORY</span></center><br>
@@ -425,24 +435,16 @@ display: -webkit-box;
 
                               <BR><div id="view-more-details-body">
                                 <div id="item-status" style="color:green;text-align:center;">
-                                  <script>
-                                  function test(i){
 
-                                    $("#continue-loading"+i).show();
-                                    $("#continue"+i).hide();
-                                    //window.location="payment.php";
-                                  }
-
-                                  </script>
 
                                   <center>
 
                                     <div id="continue-loading<?php echo $i; ?>" style="display:none;color:white;width:80%;height:40px;border:none;outline:none;border-radius:10px;background:#0d6efd;color:white;">
                                       <span class="spinner-border" style="    margin-top:4px;"></span>
                                     </div>
-
+                                      <a href="edit-item.php?itemid=<?php echo $itemid; ?>">
                                 <button id="continue<?php echo $i; ?>" onclick="test(<?php echo $i; ?>)" style="color:white;width:80%;height:40px;border:none;outline:none;border-radius:10px;background:#0d6efd;color:white;">Edit</button>
-
+                              </a>
                               </center>
                               <br>
                                 </div>

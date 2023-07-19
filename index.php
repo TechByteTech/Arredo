@@ -322,6 +322,37 @@ updateCountClient3();
 
 </script>
 
+
+<style media="screen">
+
+#yt-video-body{
+
+  width:100%;
+  height:500px;
+}
+#yt-video-content{
+
+  width:50%;
+  height:500px;
+  float:left;
+
+
+}
+
+</style>
+
+<div id="yt-video-body">
+    <center>
+
+  <div id="yt-video-content">
+<iframe width="90%" height="400" src="https://www.youtube.com/embed/t3XCUHBW63o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div id="yt-video-content">
+<iframe width="90%" height="400" src="https://www.youtube.com/embed/t3XCUHBW63o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>
+
+</center>
+
+</div>
+
  <div id="fur-category-body" style="width:100%;height:auto;overflow:auto;padding-bottom:70px;">
 
 <center>
@@ -407,11 +438,15 @@ CENTER TABLE
   <button style="    border-radius: 10px;
     outline: Sans-serif;
     width: 80%;
-    border:Sans-serif;
+    border: Sans-serif;
     height: 60px;
     background: #e99c2e;
     color: black;
-    font-weight: bold;">EXPLORE ALL CATEGORIES</button>
+    font-weight: bold;
+    outline: none;
+    border: none;
+    font-size: 28px;
+">EXPLORE ALL CATEGORIES</button>
 </div>
 </center>
 
@@ -421,17 +456,18 @@ CENTER TABLE
  <div id="google-review-section" style="width:100%;height:420px;">
 
  <center>
-   <div style="Width:100%;text-align:center;font-size:20px;height:50px;display:flex;justify-content:center;">
+   <div style="Width:100%;text-align:center;font-size:50px;height:50px;display:flex;justify-content:center;">
 <span style="color:#4285F4;float:left;">G</span><span style="color:#FBBC05;float:left;">O</span><span style="color:#EA4335;float:left;">O</span><span style="color:#4285F4;float:left;">G</span><span style="color:#34A853;float:left;">L</span><span style="color:#EA4335;float:left;">E</span>
 <span style="color:black;float:left;    text-transform: uppercase;
-    font-size: 20px;">&nbsprating &nbsp</span>
-<span class="material-icons" style="color:#e9e91e;float:left;font-size:27px;">star</span><span style="font-weight:Bold;float:left;color:black;">4.8</span>
+    font-size: 50px;">&nbsprating &nbsp</span>
+<span class="material-icons" style="color:#e9e91e;float:left;font-size:70px;">star</span><span style="font-weight:Bold;float:left;color:black;">4.8</span>
 </div>
-<div STYLE="width:100%;height:30px;font-weight:bold;color:#8a8282;">
-  500+ reviews <span style="font-size:10px;color:blue;font-weight:bold;"><a style="color:blue;" href="https://www.google.com/maps/place/Sunny+Furniture/@28.6489639,77.2110377,15z/data=!4m16!1m9!3m8!1s0x390cfd69795c9f87:0xace36ccf753afb5!2sSunny+Furniture!8m2!3d28.6489639!4d77.2110377!9m1!1b1!16s%2Fg%2F12hx_mys_!3m5!1s0x390cfd69795c9f87:0xace36ccf753afb5!8m2!3d28.6489639!4d77.2110377!16s%2Fg%2F12hx_mys_">
+<br>
+<div style="width:100%;height:30px;font-weight:bold;color:#8a8282;font-size:30px;">
+  500+ reviews <span style="font-size:15px;color:blue;font-weight:bold;"><a style="color:blue;" href="https://www.google.com/maps/place/Sunny+Furniture/@28.6489639,77.2110377,15z/data=!4m16!1m9!3m8!1s0x390cfd69795c9f87:0xace36ccf753afb5!2sSunny+Furniture!8m2!3d28.6489639!4d77.2110377!9m1!1b1!16s%2Fg%2F12hx_mys_!3m5!1s0x390cfd69795c9f87:0xace36ccf753afb5!8m2!3d28.6489639!4d77.2110377!16s%2Fg%2F12hx_mys_">
     view all on GOOGLE</a></span>
 </div>
-
+<br>
 <div  id="super-profile-body" style="white-space:nowrap;overflow-x:auto;padding-top:10px;padding-bottom:10px;padding-right:10px;">
 
 <?php
@@ -499,6 +535,8 @@ $i++;
 </center>
  </div>
 
+ <br><br>
+
     <div id="google-map-section" style="width:100%;">
 
       <center>
@@ -510,12 +548,12 @@ $i++;
 
 
 
-      
+
 
    <br>
     <?php
 include('footer.php');
-// include('home-page-slider.php');
+
 // include('mysql-connection.php');
 
  ?>

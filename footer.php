@@ -53,17 +53,15 @@
       <!--Grid row-->
       <div class="row">
 
-      
+
       <img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:100px;">
         <!--Grid column-->
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="width:500px;">
-          <h5 class="text-uppercase">Connects us on</h5>
+          <h5 class="text-uppercase">Connect Us On</h5>
 
-          
+
     <div id="social-media-contact" style="height:80px; ;">
-      <div style="text-align:center;font-weight:bold;color:Black;">
-      Footer Content
-      </div>
+
 
       <div class="social-icons">
         <a href="https://m.facebook.com/100528986236131?wtsid=rdr_08O0igl8BJDHXDgur" class="facebook" ><i class="fa fa-facebook"></i></a>
@@ -73,27 +71,27 @@
 </div>
 
 
-  <p style="color:black;">address:bharati vidyapeeth college of engg.</p>
+  <p style="color:WHITE;">10402/3,Street No.13m Furniture Market, Multani Dhanda, Paharganj, New Delhi, Delhi 110055</p>
     </div>
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase" style="Color:black;font-weight:bold;">Links</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0" >
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">Shipping Policy</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">Privacy Policy</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">About Us</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">Home</a>
             </li>
           </ul>
         </div>
@@ -101,20 +99,20 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-0">Links</h5>
+          <h5 class="text-uppercase" style="Color:black;font-weight:bold;">Links</h5>
 
-          <ul class="list-unstyled">
+    <ul class="list-unstyled mb-0" >
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">My Orders</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">Arredo Blogs</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">My Login</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">All Category</a>
             </li>
           </ul>
         </div>
@@ -125,10 +123,10 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    
+
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:45px;">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2023 Copyright ARREDO. All rights reserved
+
     </div>
     <!-- Copyright -->
   </footer>

@@ -272,6 +272,7 @@ var main_image=0;
   $itemimg=$fetch_data['itemimg'];
   $item_name=$fetch_data['itemname'];
   $item_desc=$fetch_data['itemdescription'];
+
   $item_sku=$fetch_data['itemsku'];
   $item_price=$fetch_data['itemprice'];
   $item_category=$fetch_data['itemcategory'];
@@ -319,20 +320,20 @@ var main_image=0;
 
      ?>
 
-    <div id="new-image-sub${add_new_image}" style="float:left;width:50%;
+    <div id="new-image-sub<?php echo $img; ?>" style="float:left;width:50%;
       height: 125px;">
 
-       <label for="product-image${add_new_image}" style="width:80%;height:80px;margin-top:0px;">
+       <label for="product-image<?php echo $img; ?>" style="width:80%;height:80px;margin-top:0px;">
 
           <div id="new-image${add_new_image}" style="width:80px;height:80px;border:1px solid black;border-radius:10px;">
-          <center>  <img src="photos/<?php echo $img; ?>" id="new-img${add_new_image}" style="object-fit: contain;width:77px;height:77px;"></center>
+          <center>  <img src="photos/<?php echo $img; ?>" id="new-img<?php echo $img; ?>" style="object-fit: contain;width:77px;height:77px;"></center>
 
           </div>
 
         </label>
 
 
-        <span id="new-image-text${add_new_image}" style="font-size:13px;color:red;" onclick="remove_image(${add_new_image})">remove</button></span>
+        <span id="new-image-text<?php echo $img; ?>" style="font-size:13px;color:red;" onclick="remove_old_image('<?php echo $img; ?>')">remove</button></span>
 
     </div>
 
@@ -362,7 +363,7 @@ var main_image=0;
     <input type="text" id="product-name" name="product-name" value="<?php echo $item_name; ?>" placeholder="Product Name" required>
 
     <label for="product-description">Product Description:</label>
-    <textarea id="product-description" name="product-description" value="<?php echo $item_desc; ?>"  placeholder="Product Description" rows="4" required ></textarea>
+    <textarea id="product-description" name="product-description"   placeholder="Product Description" rows="4" required ><?php echo $item_desc; ?></textarea>
 
     <label for="product-price">Product SKU:</label>
     <input type="text" id="product-sku" name="product-sku"  placeholder="Product SKU" value="<?php echo $item_sku; ?>" required>
@@ -375,7 +376,7 @@ var main_image=0;
       <option value="<?php echo $item_category; ?>"><?php echo $item_category; ?></option>
       <?php
 
-      $select_category=mysqli_query($con,"select * from category");
+      $select_category=mysqli_query($con,"select DISTINCT itemcategory from shopitem");
 
       while($data=mysqli_fetch_array($select_category)){
         $category_name=$data['category'];
@@ -418,9 +419,13 @@ var main_image=0;
 <script type="text/javascript">
 
 
+var remove_old_images_arr=[];
+var product_id='<?php $_GET['itemid']; ?>'
 
 function submit_data(){
 
+    var formData = new FormData();
+    formData.append("itemid",product_id);
 
   var product_name=$("#product-name");
   var product_description=$("#product-description");
@@ -472,20 +477,43 @@ function submit_data(){
   }
   if(main_image==0){
 
-    $("#error-val").text("Uplaod Cover Image");
-    return false;
+  formData.append("main_image","0");
 
   }
-  var images= [];
-    var formData = new FormData();
+  else{
+    formData.append("main_image",main_image);
+  }
 
-formData.append("main_image",main_image);
+  var images= [];
+
+
+
 formData.append("product-name",product_name);
 formData.append("product-description",product_description);
 formData.append("product-price",product_price);
 formData.append("product-category",product_category);
 formData.append("product-color",product_color);
 formData.append("product-sku",product_sku);
+
+
+count_old_image=remove_old_images_arr.length
+if(count_old_image!=0){
+
+  for (let i = 0; i < count_old_image; i++) {
+  formData.append('remove_image[]', remove_old_images_arr[i]);
+}
+
+
+
+}
+else{
+
+  formData.append("remove_image","0");
+
+
+}
+
+
 
 
 count_new_image=new_image_array.length
@@ -505,7 +533,7 @@ else{
 
 }
 
-formData.append("new_lisitng","new_listing");
+formData.append("update_lisitng","update_listing");
 
 $("#submit-form").hide();
 $("#submit-loading").show();
@@ -556,11 +584,22 @@ new_image_no.splice(i,1);
 $(`#new-image-sub${no}`).remove();
 
 
+}
 
 
 
+function remove_old_image(no) {
+  console.log(no);
+  $(`#new-image-sub${escapeSelector(no)}`).remove();
+  remove_old_images_arr.push(no);
 
 }
+
+// Function to escape special characters in a selector
+function escapeSelector(selector) {
+  return selector.replace(/[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&");
+}
+
 
 </script>
 

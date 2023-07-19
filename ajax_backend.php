@@ -112,6 +112,119 @@ mysqli_close($con);
 }
 
 
+if(isset($_POST['update_lisitng'])){
+
+
+  include('mysql-connection.php');
+
+  $product_name = $_POST["product-name"];
+  $product_description = $_POST["product-description"];
+  $product_price = $_POST["product-price"];
+  $product_category = $_POST["product-category"];
+  $product_color = $_POST["product-color"];
+  $product_sku = $_POST["product-sku"];
+  $new_images=$_POST['new_image'];
+  $main_image=$_POST['main_image']; //status=0 means no update of main image;
+  $remove_image=$_POST['remove_image'];
+  $itemid=$_POST['itemid'];
+
+
+  if($remove_image!=0){
+
+
+
+        $stmt3 = mysqli_prepare($con, "DELETE FROM item_images WHERE itemid = ? AND image_name=? ");
+
+
+    foreach ($remove_image as $key => $value) {
+
+
+      mysqli_stmt_bind_param($stmt3, "ss", $itemid, $value);
+      mysqli_stmt_execute($stmt3);
+
+
+
+
+    }
+
+
+  }
+
+  $rand_no=rand(1000000000,99999999999999);
+
+  $uniqueId = $rand_no.uniqid();
+  if($new_images=="1"){
+$images = $_POST['images'];
+
+$stmt = mysqli_prepare($con, "INSERT INTO item_images (itemid, image_name) VALUES (?, ?)");
+
+
+
+
+foreach ($images as $key => $value) {
+    $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $value));
+    $image = imagecreatefromstring($imageData);
+
+    $rand_no=rand(1000000000,99999999999999);
+    $filename = $rand_no.uniqid() . '.webp';
+
+    imagewebp($image, 'photos/' . $filename);
+
+    imagedestroy($image);
+
+    $itemid = $uniqueId;
+    $image_name = $filename;
+
+    mysqli_stmt_bind_param($stmt, "ss", $itemid, $image_name);
+    mysqli_stmt_execute($stmt);
+
+}
+
+
+
+
+  mysqli_stmt_close($stmt);
+}
+
+  if($main_image!=0){
+
+      $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $main_image));
+      $image = imagecreatefromstring($imageData);
+
+      $rand_no=rand(1000000000,99999999999999);
+      $filename = $rand_no.uniqid() . '.webp';
+
+      imagewebp($image, 'photos/' . $filename);
+
+      imagedestroy($image);
+
+  }
+
+
+  $stmt2 = mysqli_prepare($con, "UPDATE shopitem SET itemname = ?, itemdescription = ?, itemsku = ?, itemprice = ?, itemimg = ?, itemcategory = ?, itemcolor = ? WHERE itemid = ?");
+
+  mysqli_stmt_bind_param($stmt2, "ssssssss", $product_name, $product_description, $product_sku, $product_price, $filename, $product_category, $product_color, $uniqueId);
+
+  if (mysqli_stmt_execute($stmt2)) {
+    echo true;
+  } else {
+    echo false;
+  }
+
+
+// Close the statement and connection
+mysqli_stmt_close($stmt2);
+mysqli_close($con);
+
+
+
+//}
+
+
+
+}
+
+
 if(isset($_POST['accept_order'])){
   $orderid=$_POST['itemid'];
   $email=$_SESSION['userdata'];
@@ -267,6 +380,38 @@ if(isset($_POST['update-ecom-customer-details'])){
   echo 1;
   exit();
 
+}
+
+
+
+if(isset($_POST['search_by_input'])){
+  $input_text=$_POST['input_text'];
+
+    $con=new mysqli("localhost","root","","arredo");
+  $select_userdata=mysqli_query($con,"select * from shopitem where itemname LIKE '%$input_text%' limit 10 ");
+  $data=array();
+
+  while($fetch_data=mysqli_fetch_array($select_userdata)){
+    $id=$fetch_data['id'];
+    $img=$fetch_data['itemimg'];
+    $username=$fetch_data['itemname'];
+    $itemprice=$fetch_data['itemprice'];
+
+    $temp=array($id,$img,$username,$itemprice);
+    array_push($data,$temp);
+
+    }
+
+    if(mysqli_num_rows($select_userdata)==0){
+      echo 0;
+    }
+    else{
+
+    echo json_encode($data);
+
+    }
+
+    //echo $json_data;
 }
 
 

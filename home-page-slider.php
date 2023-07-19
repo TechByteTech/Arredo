@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
 
-imgArr=["1.png","2.png","3.png","4.png"];
+imgArr=["1.webp","2.webp","3.webp","4.webp"];
 sliderIndex=1;
 
 function lib_images_slider(){
@@ -113,7 +113,7 @@ function lib_images_slider(){
         <div id="slider-sub-body" style="position:relative;width:100%;height:auto;float:left;">
           <center>
           <div style="width:100%;height:90%;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);top:0;bottom:0;border-radius: 10px;margin:auto;">
-           <img src="photos/1.png" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
+           <img src="photos/1.webp" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
         </div>
       </center>
       </div>
@@ -127,7 +127,7 @@ function lib_images_slider(){
         <div id="slider-sub-body" style="position:relative;width:100%;height:auto;float:left;">
           <center>
           <div style="width:100%;height:90%;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);top:0;bottom:0;border-radius: 10px;margin:auto;">
-           <img src="photos/2.png" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
+           <img src="photos/2.webp" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
         </div>
       </center>
       </div>
@@ -142,7 +142,7 @@ function lib_images_slider(){
         <div id="slider-sub-body" style="position:relative;width:100%;height:auto;float:left;">
           <center>
           <div style="width:100%;height:90%;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);top:0;bottom:0;border-radius: 10px;margin:auto;">
-           <img src="photos/3.png" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
+           <img src="photos/3.webp" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
         </div>
       </center>
       </div>
@@ -159,7 +159,7 @@ function lib_images_slider(){
         <div id="slider-sub-body" style="position:relative;width:100%;height:auto;float:left;">
           <center>
           <div style="width:100%;height:90%;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);top:0;bottom:0;border-radius: 10px;margin:auto;">
-           <img src="photos/4.png" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
+           <img src="photos/4.webp" alt="" id="slider-img" style="width:100%;height:auto;object-fit:contain;">
         </div>
       </center>
       </div>

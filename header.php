@@ -94,7 +94,7 @@
     }
 
 
-    
+
 
   </style>
 
@@ -214,6 +214,40 @@
 
   }
 
+  #menu-list-sub:hover{
+    border-radius: 10px;
+    background: #7c150c;
+    color:White;
+    padding:5px;
+  }
+  #menu-btn:hover{
+
+
+    border-radius: 10px;
+    background: #7c150c;
+    color:White;
+
+    font-size: 30px;
+        margin: auto;
+        margin-left: 35px;
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 4px;
+        user-select: none;
+        transform: scale(1.2);
+          transition: all 0.3s ease-in-out;
+
+  }
+  #menu-btn{
+    font-size: 30px;
+        margin: auto;
+        margin-left: 35px;
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 4px;
+        user-select: none;
+  }
+
 
   #menu-list-sub{
 
@@ -224,7 +258,7 @@
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-   color:#7c150c;;
+   color:#7c150c;
   }
 
 
@@ -242,7 +276,7 @@
     background-color: #f9f9f9;
     min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 100;
   }
 
   .dropdown:hover .dropdown-content {
@@ -259,6 +293,11 @@
   .dropdown-content a:hover {
     background-color: #f1f1f1;
   }
+
+  .dropdown-content::-webkit-scrollbar {
+      display: none;
+  }
+
 </style>
 
 
@@ -267,7 +306,7 @@
 
   <div id="header-body" style="background-color:white;border:none;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);">
     <div id="menu-button" >
-      <div id="menu-btn" class="material-icons" style="font-size:30px;margin:auto;padding-left:35px;padding-top:15px; cursor:pointer;user-select:none;">
+      <div id="menu-btn" class="material-icons" >
       menu
     </div>
 
@@ -282,11 +321,11 @@
     <center style="color:white;font-weight:bold;user-select:none;"><img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:80px;"> </center>
     </a>
     </div>
-    
+
     <div id="menu-list-data" style="width:45%;float:left;height:70px;padding-top:30px;padding-left:70px;margin-left:44px;font-weight:bold;text-transform: uppercase;
     letter-spacing: 1px;font-family:arial;">
     <center>
-      
+
       <a href="myorder.php">
       <div id="menu-list-sub">
           Orders
@@ -309,28 +348,77 @@
 
     <div class="dropdown">
   <span id="menu-list-sub">Category</span>
-  <div class="dropdown-content">
-    <a href="#">Option 1</a>
-    <a href="#">Option 2</a>
-    <a href="#">Option 3</a>
+  <div class="dropdown-content" style="    width: 300px;
+    height: 400px;
+    overflow: auto;margin-top:30px;border-radius:10px;">
+
+
+
+    <?php
+
+       include("mysql-connection.php");
+
+    $query = "select DISTINCT category FROM category";
+$result = mysqli_query($con, $query);
+
+if ($result) {
+    // Loop through the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        $columnName = $row['category'];
+          echo "<a href='#'>".$columnName."</a><hr>";
+    }
+}
+
+
+
+     ?>
   </div>
 </div>
-    
-    
-    
+
+
+
 
   </center>
     </div>
-   
-   
+
+
+<style media="screen">
+
+
+  #search-input{
+
+    border-radius: 15px;
+    border:2px solid #7c150c;
+    height:40px;
+
+
+
+  }
+
+#result-of-search-by-name::-webkit-scrollbar {
+    display: none;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+    color:black;
+}
+
+
+
+</style>
+
 
     <div id="msg-body" style="    width: 30%;float: right;height:-70px; padding-top:25px;">
     <!--dropdown-->
     <div class="topnav">
     <div class="search-container">
     <form action="#">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="search" placeholder="Search Product Here.." name="search" id="search-input" style="outline:none;">
+
+      <div id="result-of-search-by-name" style="z-index:2;position:absolute;width:300px;overflow: auto;max-height:400px;background:white;border:1px solid black;display:none;border-radius:10px;">
+
+
       <div id="msg-body" style="    width: 30%;float: right;">
     <a href="cart.php">
       <div id="msg-btn-icon" class="material-icons" style="color:#7c150c;width: 100%;height: 100%;padding-top: 2px;font-size: 30px;padding-left: 20px;" >
@@ -343,8 +431,9 @@
 </div>
   </div>
 </div>
-    
-  
+</div>
+
+
 
 <div id="menu-body" style="background:white; ">
   <div id="menu-close-icon" style="width:100%;height:40px;background:white;">
@@ -357,7 +446,8 @@
  <BR>
    <?php
 
-   include("mysql-connection.php");
+
+    include('search.php');
    if(isset($_SESSION['userdata'])){
 
      $email=$_SESSION['userdata'];
@@ -394,6 +484,8 @@
 </div>
 </a>
 <br>
+
+
 
 
 
