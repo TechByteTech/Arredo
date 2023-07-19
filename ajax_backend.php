@@ -129,6 +129,7 @@ if(isset($_POST['update_lisitng'])){
   $itemid=$_POST['itemid'];
 
 
+
   if($remove_image!=0){
 
 
@@ -143,10 +144,7 @@ if(isset($_POST['update_lisitng'])){
       mysqli_stmt_execute($stmt3);
 
 
-
-
     }
-
 
   }
 
@@ -156,12 +154,14 @@ if(isset($_POST['update_lisitng'])){
   if($new_images=="1"){
 $images = $_POST['images'];
 
+
 $stmt = mysqli_prepare($con, "INSERT INTO item_images (itemid, image_name) VALUES (?, ?)");
 
 
 
 
 foreach ($images as $key => $value) {
+
     $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $value));
     $image = imagecreatefromstring($imageData);
 
@@ -172,7 +172,7 @@ foreach ($images as $key => $value) {
 
     imagedestroy($image);
 
-    $itemid = $uniqueId;
+
     $image_name = $filename;
 
     mysqli_stmt_bind_param($stmt, "ss", $itemid, $image_name);
@@ -186,6 +186,8 @@ foreach ($images as $key => $value) {
   mysqli_stmt_close($stmt);
 }
 
+
+
   if($main_image!=0){
 
       $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $main_image));
@@ -198,12 +200,22 @@ foreach ($images as $key => $value) {
 
       imagedestroy($image);
 
+         $stmt4 = mysqli_prepare($con, "UPDATE shopitem SET itemimg = ? WHERE itemid = ?");
+         mysqli_stmt_bind_param($stmt4, "ss", $filename, $itemid);
+
+         if (mysqli_stmt_execute($stmt4)) {
+
+         } else {
+
+         }
+
+
   }
 
 
-  $stmt2 = mysqli_prepare($con, "UPDATE shopitem SET itemname = ?, itemdescription = ?, itemsku = ?, itemprice = ?, itemimg = ?, itemcategory = ?, itemcolor = ? WHERE itemid = ?");
+  $stmt2 = mysqli_prepare($con, "UPDATE shopitem SET itemname = ?, itemdescription = ?, itemsku = ?, itemprice = ?, itemcategory = ?, itemcolor = ? WHERE itemid = ?");
 
-  mysqli_stmt_bind_param($stmt2, "ssssssss", $product_name, $product_description, $product_sku, $product_price, $filename, $product_category, $product_color, $uniqueId);
+  mysqli_stmt_bind_param($stmt2, "sssssss", $product_name, $product_description, $product_sku, $product_price, $product_category, $product_color, $itemid);
 
   if (mysqli_stmt_execute($stmt2)) {
     echo true;
@@ -217,8 +229,6 @@ mysqli_stmt_close($stmt2);
 mysqli_close($con);
 
 
-
-//}
 
 
 

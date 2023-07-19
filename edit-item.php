@@ -232,7 +232,7 @@ var main_image=0;
                   </label>
                 </center>  <input type="file" id="product-cover-image${add_new_image}" name="product-cover-image${add_new_image}" style="display:none;"accept="image/*">
 
-              <span id="new-image-text${add_new_image}" style="font-size:13px;color:red;" onclick="remove_image(${add_new_image})">remove</button></span>
+              <span id="new-image-text${add_new_image}"  style="font-size:13px;color:red;cursor:pointer;" onclick="remove_image(${add_new_image})">remove</button></span>
 
               </div>`);
 
@@ -333,7 +333,7 @@ var main_image=0;
         </label>
 
 
-        <span id="new-image-text<?php echo $img; ?>" style="font-size:13px;color:red;" onclick="remove_old_image('<?php echo $img; ?>')">remove</button></span>
+        <span id="new-image-text<?php echo $img; ?>" style="font-size:13px;color:red;cursor:pointer;" onclick="remove_old_image('<?php echo $img; ?>')">remove</button></span>
 
     </div>
 
@@ -379,7 +379,7 @@ var main_image=0;
       $select_category=mysqli_query($con,"select DISTINCT itemcategory from shopitem");
 
       while($data=mysqli_fetch_array($select_category)){
-        $category_name=$data['category'];
+        $category_name=$data['itemcategory'];
        ?>
       <option value="<?php echo $category_name; ?>"><?php echo $category_name; ?></option>
 
@@ -391,7 +391,7 @@ var main_image=0;
     </select>
 
     <label for="product-color">Product Color:</label>
-    <input type="text" id="product-color" name="product-color" placeholder="Product Color"  required>
+    <input type="text" id="product-color" name="product-color" value="<?php echo $item_color; ?>" placeholder="Product Color"  required>
     <br>
     <center>
     <div id="error-val" style="color:red;font-size:15px;"></div>
@@ -419,12 +419,14 @@ var main_image=0;
 <script type="text/javascript">
 
 
+
 var remove_old_images_arr=[];
-var product_id='<?php $_GET['itemid']; ?>'
+var product_id='<?php echo $_GET['itemid']; ?>'
 
 function submit_data(){
 
     var formData = new FormData();
+
     formData.append("itemid",product_id);
 
   var product_name=$("#product-name");
@@ -535,26 +537,27 @@ else{
 
 formData.append("update_lisitng","update_listing");
 
-$("#submit-form").hide();
-$("#submit-loading").show();
+
+if(calling_fun()){
 
 
 $.ajax({
         type:'POST',
         url:'ajax_backend.php',
-        async:false,
         contentType:false,
         cache:false,
         processData: false,
         data:formData,
         success:function(data,textStatus){
+
           console.log(data)
           if(data==true){
             $("#submit-form").hide();
             $("#submit-loading").show();
 
             window.location="list-new-item.php";
-          }
+
+         }
           else{
             $("#submit-form").show();
             $("#submit-loading").hide();
@@ -567,10 +570,20 @@ $.ajax({
 
 })
 
+}
+
   return false;
 
 
 
+}
+
+function calling_fun(){
+
+  $("#submit-form").hide();
+  $("#submit-loading").show();
+  console.log("blblblblblkb");
+  return true;
 }
 
 function remove_image(no){
