@@ -967,11 +967,12 @@ text-transform: capitalize;">check cart</button>
     $description=$data['itemdescription'];
     $price=$data['itemprice'];
     $img=$data['itemimg'];
+    $itemid=$data['itemid'];
 
 
 
  ?>
-
+    <A href="item.php?itemid=<?php echo $itemid ?>">
      <div id="profile-body" style="    background:#b88ae938;margin-left:10px;display:inline-block;width: 270px;height:312px;padding: 10px 5px 5px; top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
        <div id="profile" style="float: left;width:100%;">
     <img src="photos/<?php echo $img; ?>" style="width:120px;
@@ -1012,6 +1013,7 @@ white-space: normal;
 </div>
 
   </div>
+</a>
 
 <?php
 $i++;

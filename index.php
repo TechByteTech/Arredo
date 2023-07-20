@@ -21,7 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
-</head>
 
 	<body>
 		<!--[if lte IE 9]>
@@ -302,6 +301,7 @@ const updateCountClient = () => {
 updateCountClient();
 
 
+
 const countElLL = document.querySelector('.ongoing-projects');
 const updateCountClient3 = () => {
   const target = 100;
@@ -379,8 +379,8 @@ CHAIR
 <div id="cat-profile-body" style="background-color:#F5F5DC;width: 270px;height: 290px;top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
   <div id="profile" style="float: left;width:100%;">
 
-<img src="compressed-photos/cat02.png" style="    width: 150px;
-    height: 180px;
+<img src="compressed-photos/cat002.png" style="    width: 350px;
+    height: 200px;
    margin-top: 5px;
 
    object-fit: contain;">
@@ -389,7 +389,7 @@ CHAIR
 
 <br>
 <div id="person-name" style="color:black;float:left;width:100%;padding:20px;font-size:20px;">
-SOFA
+CAFE CHAIR
 
 </div>
 
@@ -398,8 +398,8 @@ SOFA
 <div id="cat-profile-body" style="background-color:#80808033;margin-left:10px;width: 270px;height: 290px;padding: 10px 5px 5px; top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
   <div id="profile" style="float: left;width:100%;">
 
-<img src="compressed-photos/cat03.png" style="    width: 150px;
-    height: 180px;
+<img src="compressed-photos/cat003.png" style="    width: 200px;
+    height: 200px;
    margin-top: 5px;
 
    object-fit: contain;">
@@ -408,7 +408,7 @@ SOFA
 
 <br>
 <div id="person-name" style="color:black;float:left;width:100%;padding:20px;font-size:20px;">
-NIGHTSTAND
+HIGH CHAIR
 
 </div>
 
@@ -427,7 +427,7 @@ NIGHTSTAND
 
 <br>
 <div id="person-name" style="color:black;float:left;width:100%;padding:20px;font-size:20px;">
-CENTER TABLE
+TABLE
 
 </div>
 
@@ -435,6 +435,7 @@ CENTER TABLE
 
 <div style="width:100%;float:left;margin-top:20px;">
 
+  <a href="all-category.php">
   <button style="    border-radius: 10px;
     outline: Sans-serif;
     width: 80%;
@@ -447,6 +448,7 @@ CENTER TABLE
     border: none;
     font-size: 28px;
 ">EXPLORE ALL CATEGORIES</button>
+</a>
 </div>
 </center>
 

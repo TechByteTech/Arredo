@@ -366,16 +366,19 @@ display: -webkit-box;
                       <?php $email=$_SESSION['userdata'];
                       $con=new mysqli("localhost","root","","arredo");
 
+
                       $selectuniqueorder=mysqli_query($con,"select DISTINCT orderid from itemorder  ORDER BY ID DESC");
-                      $new_order=mysqli_num_rows($selectuniqueorder);
+                      //$new_order=mysqli_num_rows($selectuniqueorder);
                       $selectuniqueorder2=mysqli_query($con,"select DISTINCT orderid from itemorder where status='2' ");
                       $accepted_order=mysqli_num_rows($selectuniqueorder2);
                       $selectuniqueorder3=mysqli_query($con,"select DISTINCT orderid from itemorder where status='3' ");
                       $rejected_order=mysqli_num_rows($selectuniqueorder3);
+                      $selectuniqueorder4=mysqli_query($con,"select DISTINCT orderid from itemorder");
+                      $all_order=mysqli_num_rows($selectuniqueorder4);
 
                        ?>
                         <div style="width:100%;height:50px;text-align:center;">
-                      <span style="padding:10px;">All Orders(<?php echo $new_order; ?>)</span>
+                      <span style="padding:10px;">All Orders(<?php echo $all_order; ?>)</span>
                       <span style="padding:10px;">Accepted(<?php echo $accepted_order; ?>)</span>
                       <span style="padding:10px;">Rejected(<?php echo $rejected_order; ?>)</span>
                     </div>

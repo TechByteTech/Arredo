@@ -28,6 +28,18 @@
 
   $con=new mysqli("localhost","root","","arredo");
 
+  $select_item_table=mysqli_query($con,"select * from shopitem");
+  $total_items=mysqli_num_rows($select_item_table);
+
+  $select_userdata_table=mysqli_query($con,"select * from userdata");
+  $total_customers=mysqli_num_rows($select_userdata_table);
+
+  $select_itemorder_table=mysqli_query($con,"select DISTINCT orderid from itemorder where status=1");
+  $total_new_order=mysqli_num_rows($select_itemorder_table);
+
+  $select_itemorder_table=mysqli_query($con,"select DISTINCT orderid from itemorder");
+  $total_orders=mysqli_num_rows($select_itemorder_table);
+
 
 ?>
 
@@ -36,7 +48,7 @@
 
 <?php include('header.php'); ?>
   <body id="body-container" >
-
+    <br>
     <div id="admin-panel-body" style="margin-top:100px;width:100%;height:100px;text-align:center;font-size:25px;font-weight:Bold;">
       <div id="admin-panel-text">ADMIN PANEL</div>
     </div>
@@ -62,7 +74,7 @@
               <span class="spinner-border" style="    margin-top: 10px;"></span>
             </div>
 
-        <button id="continue1" onclick="test(1)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">New Order(5)</button>
+        <button id="continue1" onclick="test(1)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">New Order(<?php echo $total_new_order; ?>)</button>
       </div>
 
       <div id="admin-panel-btn" style="width:50%;float:left;height:70px;">
@@ -70,7 +82,7 @@
       <span class="spinner-border" style="    margin-top: 10px;"></span>
     </div>
 
-<button id="continue2" onclick="test(2)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">Inventory(200)</button>
+<button id="continue2" onclick="test(2)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">Inventory(<?php echo $total_items; ?>)</button>
 </div>
 
 
@@ -79,7 +91,7 @@
 <span class="spinner-border" style="    margin-top: 10px;"></span>
 </div>
 
-<button id="continue3" onclick="test(3)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">All Orders(100)</button>
+<button id="continue3" onclick="test(3)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">All Orders(<?php echo $total_orders; ?>)</button>
 </div>
 
 
@@ -90,7 +102,7 @@
 
 
 
-<button id="continue4" onclick="test(4)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">Customers(1000)</button>
+<button id="continue4" onclick="test(4)" style="color:black;width:80%;height:50px;border:none;outline:none;border-radius:10px;font-weight:bold;background: #ee990b;">Customers(<?php echo $total_customers; ?>)</button>
 </div>
 
 
@@ -111,6 +123,27 @@
 </div>
 
 </center>
+
+
+<style media="screen">
+
+
+@media screen and (min-width:700px){
+
+
+  #admin-panel-btn-body{
+    width:60% !important;
+  }
+
+}
+
+@media screen and (max-width:700px){
+
+
+
+}
+
+</style>
 
 
 

@@ -388,8 +388,10 @@ if ($result) {
   #search-input{
 
     border-radius: 15px;
-    border:2px solid #7c150c;
-    height:40px;
+border: 2px solid #7c150c !important;
+height: 40px;
+width: 200px;
+
 
 
 

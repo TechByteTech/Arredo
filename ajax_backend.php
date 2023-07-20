@@ -117,6 +117,7 @@ if(isset($_POST['update_lisitng'])){
 
   include('mysql-connection.php');
 
+
   $product_name = $_POST["product-name"];
   $product_description = $_POST["product-description"];
   $product_price = $_POST["product-price"];
