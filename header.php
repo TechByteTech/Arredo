@@ -276,7 +276,7 @@
     
       }
       #menu-btn{
-        font-size: 50px!important;
+        font-size: 30px!important;
     margin-left: 15px!important;
 
       }
@@ -286,7 +286,7 @@
       position: fixed!important;
       /* left:0;
 right:0; */
-margin-left:35.5%;
+margin-left:34.5%;
 margin-right:auto;
     }
     #cart{
@@ -297,11 +297,14 @@ margin-right:auto;
      /* position: relative!important; */
      position:fixed!important;
      float:right;
-   right: 0;
-   top:40px;
+   right: 15px;
+   top:30px;
    
     }
- 
+    #msg-btn-icon{
+      padding-right:4px;
+    }
+    
  } 
 
  @media screen and (max-width: 500px) {
@@ -312,7 +315,10 @@ margin-right:auto;
      
        }
  
-    
+       #msg-body{
+   
+margin-left:31.5%;
+    }
  } 
 
 
@@ -524,7 +530,7 @@ input[type=search]::-webkit-search-cancel-button {
     <div class="topnav">
     <div class="search-container">
     <form action="#">
-      <input type="search" placeholder="Search Product Here.." name="search" id="search-input" style="outline:none;">
+      <input type="search" placeholder="       Search Product Here.." name="search" id="search-input" style="outline:none;">
 
       <div id="result-of-search-by-name" style="position:absolute;width:1px;max-height:50px;background:white;border:1px solid black;display:none;border-radius:10px;">
      

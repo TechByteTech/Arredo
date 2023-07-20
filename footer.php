@@ -52,7 +52,7 @@
  margin-right:40%;
 }
   .bg-secondary{
-    height:600px!important;
+    height:650px!important;
   }
   
 
@@ -144,7 +144,7 @@
 
     <!-- Copyright -->
 
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:45px;">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); margin-top:0px; padding:0px">
       © 2023 Copyright ARREDO. All rights reserved
 
     </div>

@@ -42,11 +42,6 @@ function lib_images_slider(){
 <style media="screen">
 
 
-
-
-
-
-
 @media screen and (min-width:1024px){
 
   .slider-body{
@@ -67,15 +62,17 @@ function lib_images_slider(){
 @media screen and (max-width:750px){
 
   .slider-body{
-  height:330px;
-  font-size: 25px;
+  height:240px!important;
+  font-size:60px!important;
+  margin-top:155px!important;
   }
 }
 @media screen and (max-width:650px){
 
   .slider-body{
-  height:280px;
-  font-size: 25px;
+  height:150px!important;
+  font-size: 60px!important;
+  margin-top:150px!important;
   }
 }
 

@@ -407,11 +407,12 @@ CHAIR
 <div id="cat-profile-body" style="background-color:#F5F5DC;width: 270px;height: 290px;top: 10px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);border-radius:10px;">
   <div id="profile" style="float: left;width:100%;">
 
-<img src="compressed-photos/cat002.png" style="    width: 350px;
-    height: 200px;
+<img src="compressed-photos/cat002.png" style="    width: 205px;
+    height: 150px;
    margin-top: 5px;
+   position:relative;
 
-   object-fit: contain;">
+   object-fit: cover;">
  </div>
 
 
@@ -463,7 +464,7 @@ TABLE
 
 <div style="width:100%;float:left;margin-top:20px;">
 
-  <button style="    border-radius: 10px;
+  <button id="btn" style="    border-radius: 10px;
     outline: Sans-serif;
     width: 80%;
     border: Sans-serif;
