@@ -38,8 +38,25 @@
 }
 
 
+@media screen and (max-width: 980px) {
+  .social-icons a {
+  width: 40px!important;
+  height: 40px!important;
+  
+}
 
+ } 
+ @media screen and (max-width: 768px) {
+#logo_pos{
+ margin-left:40%;
+ margin-right:40%;
+}
+  .bg-secondary{
+    height:600px!important;
+  }
+  
 
+ } 
 
       </style>
 
@@ -47,16 +64,17 @@
 
     <section class="" >
   <!-- Footer -->
-  <footer class="bg-secondary text-white text-center" style="height:300px;">
+  <footer class="bg-secondary text-white text-center" style="height:350px;">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
       <div class="row">
 
 
-      <img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:100px;">
-        <!--Grid column-->
+      <img id="logo_pos" src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:100px;">
+      <!--Grid column-->
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="width:500px;">
+        <br>
           <h5 class="text-uppercase">Connect Us On</h5>
 
 
@@ -71,8 +89,10 @@
 </div>
 
 
-  <p style="color:WHITE;">10402/3,Street No.13m Furniture Market, Multani Dhanda, Paharganj, New Delhi, Delhi 110055</p>
-    </div>
+  <p id="address" style="color:WHITE;">10402/3,Street No.13m Furniture Market, Multani Dhanda, Paharganj, New Delhi, Delhi 110055</p>
+   
+</div>
+<br>
         </div>
         <!--Grid column-->
 

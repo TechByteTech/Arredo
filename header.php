@@ -1,4 +1,7 @@
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
   <style media="screen">
 
@@ -182,7 +185,7 @@
      }
     }
 
-    @media screen and (max-width:700px){
+    /* @media screen and (max-width:700px){
 
       #menu-button{
         display:block;
@@ -199,14 +202,122 @@
         margin-top: -20px;
       }
 
+    } */
+
+
+
+ @media screen and (max-width: 850px) {
+ 
+  header{
+      width:20% !important;
+        margin-top: -20px;
+      }
+      #header-text{
+       
+         margin-top: -5px!important;font-size:10px!important;
+      }
+      #logo{
+      margin-top:20px!important;
+    height: 65px !important;
+    width: 60px!important;
+      }
+ 
+     div[id="menu-list-data"]{
+        
+    width:0.5% !important;
+    height: 30px !important;
+    padding-top: 10px !important;
+    padding-left: 25px !important;
+    margin-left: 20px !important;
+
+   
+}
+#menu-btn{
+        font-size: 30px!important;
+    margin-left: 20px!important;
+
+      }
+      
+     #msg-body{
+
+     }
+     
+  } 
+  @media screen and (max-width: 750px) {
+ 
+ header{
+     width: 10% !important;
+       margin-top: -2px;
+     }
+     #header-text{
+        width:auto!important;
+         margin-top: -5px!important;font-size:40px!important;
+         margin-left:45%;
+      }
+      #header-body{
+        height:145px;
+      }
+      div[id="menu-list-data"]{
+        display:none!important;
+        width:1% !important;
+        height: 30px !important;
+        padding-top: 10px !important;
+        padding-left: 25px !important;
+        margin-left: 20px !important;
+    
+       
     }
+    #logo{
+     
+    height: 65px !important;
+    width: 70px!important;
+    position: relative!important;
+    margin-left:-100px;
+    
+      }
+      #menu-btn{
+        font-size: 50px!important;
+    margin-left: 15px!important;
+
+      }
+      #msg-body{
+      width:30%!important;
+      margin-top:65px;
+      position: fixed!important;
+      /* left:0;
+right:0; */
+margin-left:35.5%;
+margin-right:auto;
+    }
+    #cart{
+      display:inline-block!important;
+      width:50px!important;
+    
+      height:50px;
+     /* position: relative!important; */
+     position:fixed!important;
+     float:right;
+   right: 0;
+   top:40px;
+   
+    }
+ 
+ } 
+
+ @media screen and (max-width: 500px) {
+  #logo{
+     
+     
+     margin-left:-50px;
+     
+       }
+ 
+    
+ } 
 
 
 
 
-  @media screen and (max-width: 400px) {
-
-  }
 
   @media screen and (max-width:320px){
 
@@ -297,9 +408,8 @@
   .dropdown-content::-webkit-scrollbar {
       display: none;
   }
-
+  
 </style>
-
 
 <header style="width:100%;overflow:auto;box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);">
 
@@ -318,7 +428,7 @@
 
     <div id="header-text" style="" >
       <a href="index.php">
-    <center style="color:white;font-weight:bold;user-select:none;"><img src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:80px;"> </center>
+    <center style="color:white;font-weight:bold;user-select:none;"><img id="logo" src="photos/arredo-logo.png" style="object-fit:cover;height:80px;width:80px;"> </center>
     </a>
     </div>
 
@@ -388,10 +498,8 @@ if ($result) {
   #search-input{
 
     border-radius: 15px;
-border: 2px solid #7c150c !important;
-height: 40px;
-width: 200px;
-
+    border:2px solid #7c150c;
+    height:40px;
 
 
 
@@ -418,14 +526,15 @@ input[type=search]::-webkit-search-cancel-button {
     <form action="#">
       <input type="search" placeholder="Search Product Here.." name="search" id="search-input" style="outline:none;">
 
-      <div id="result-of-search-by-name" style="z-index:2;position:absolute;width:300px;overflow: auto;max-height:400px;background:white;border:1px solid black;display:none;border-radius:10px;">
-
-
-      <div id="msg-body" style="    width: 30%;float: right;">
+      <div id="result-of-search-by-name" style="position:absolute;width:1px;max-height:50px;background:white;border:1px solid black;display:none;border-radius:10px;">
+     
+      </div>
+      <div id="cart" id="msg-body" style="    width: 30%;float: right; display:none; ">
     <a href="cart.php">
       <div id="msg-btn-icon" class="material-icons" style="color:#7c150c;width: 100%;height: 100%;padding-top: 2px;font-size: 30px;padding-left: 20px;" >
         shopping_cart
-      </div>
+</div>
+</div>
 
     </a>
 </div>

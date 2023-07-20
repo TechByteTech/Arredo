@@ -59,6 +59,34 @@ include('mysql-connection.php');
  margin-top:20px;
  color: ;
 }
+@media screen and (max-width: 580px) {
+  #sec_1{
+  font-size:30px!important;
+ }
+ .section{
+  font-size:30px!important;
+ }
+ .material-icons{
+  font-size:30px!important;
+ }
+ #btn{
+  height:80px!important;
+ }
+ #counter-body{
+  font-size:20px!important;
+ }
+
+#trending{
+font-size:30px!important;
+}
+#best_selling{
+  font-size:30px!important;
+}
+#yt-video-content{
+width:100%!important;
+  height:auto!important;
+}
+ } 
 
 
 </style>
@@ -112,7 +140,7 @@ margin-left: 2%;
 
 <div id="trending-item-body">
 
-  <center><div style="font-size:55px;padding:10px;text-transform:uppercase;font-family:none;">Best Selling Products</div></center>
+  <center><div id="best_selling" style="font-size:55px;padding:10px;text-transform:uppercase;font-family:none;">Best Selling Products</div></center>
   <center>
 
   <div  id="super-profile-body" style="white-space:nowrap;overflow-x:auto;padding-top:10px;padding-bottom:10px;padding-right:10px;">
@@ -185,7 +213,7 @@ margin-left: 2%;
 </div>
 <br><br>
 
-<center><div style="font-size:40px;padding:10px;text-transform:uppercase;">Trending Products</div>
+<center><div id="trending" style="font-size:40px;padding:10px;text-transform:uppercase;">Trending Products</div>
 
 <div id="trending-item-body">
 
@@ -435,7 +463,6 @@ TABLE
 
 <div style="width:100%;float:left;margin-top:20px;">
 
-  <a href="all-category.php">
   <button style="    border-radius: 10px;
     outline: Sans-serif;
     width: 80%;
@@ -458,11 +485,11 @@ TABLE
  <div id="google-review-section" style="width:100%;height:420px;">
 
  <center>
-   <div style="Width:100%;text-align:center;font-size:50px;height:50px;display:flex;justify-content:center;">
+   <div class="section" style="Width:100%;text-align:center;font-size:50px;height:50px;display:flex;justify-content:center;">
 <span style="color:#4285F4;float:left;">G</span><span style="color:#FBBC05;float:left;">O</span><span style="color:#EA4335;float:left;">O</span><span style="color:#4285F4;float:left;">G</span><span style="color:#34A853;float:left;">L</span><span style="color:#EA4335;float:left;">E</span>
-<span style="color:black;float:left;    text-transform: uppercase;
+<span class="section" style="color:black;float:left;    text-transform: uppercase;
     font-size: 50px;">&nbsprating &nbsp</span>
-<span class="material-icons" style="color:#e9e91e;float:left;font-size:70px;">star</span><span style="font-weight:Bold;float:left;color:black;">4.8</span>
+<span id="sec_1" class="material-icons" style="color:#e9e91e;float:left;font-size:70px;">star</span><span style="font-weight:Bold;float:left;color:black;">4.8</span>
 </div>
 <br>
 <div style="width:100%;height:30px;font-weight:bold;color:#8a8282;font-size:30px;">
