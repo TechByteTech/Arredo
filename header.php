@@ -217,6 +217,7 @@
          margin-top: -5px!important;font-size:10px!important;
       }
       #logo{
+      
       margin-top:20px!important;
     height: 65px !important;
     width: 60px!important;
@@ -241,6 +242,7 @@
      #msg-body{
 
      }
+    
      
   } 
   @media screen and (max-width: 750px) {
@@ -267,27 +269,56 @@
     
        
     }
+
     #logo{
-     
+      /* margin-left:auto!important;
+        margin-right:auto!important;
+display: block;
     height: 65px !important;
     width: 70px!important;
-    position: relative!important;
-    margin-left:-100px;
-    
+    /* position: relative!important; */
+    /* margin-left:-100px; */
+     */
+
+
+     left: 50%;
+margin-left: -115px !important;
+width: 100%;
+height: 65px !important;
+    width: 70px!important;
+
       }
       #menu-btn{
         font-size: 30px!important;
     margin-left: 15px!important;
 
       }
-      #msg-body{
+      /* #msg-body{
       width:30%!important;
       margin-top:65px;
       position: fixed!important;
       /* left:0;
 right:0; */
-margin-left:34.5%;
-margin-right:auto;
+/* margin-left:34.5%; 
+margin-right:auto; 
+    }  */
+    #search-input{
+      width:auto!important;
+      margin-top:60px;
+      position: fixed!important;
+      /* left:0;
+right:0; */
+left: 50%;
+margin-left: -97px !important; 
+    }
+    #result-of-search-by-name{
+      width:auto!important;
+      margin-top:100px;
+      position: fixed!important;
+      /* left:0;
+right:0; */
+left: 50%;
+margin-left: -97px !important; 
     }
     #cart{
       display:inline-block!important;
@@ -304,21 +335,25 @@ margin-right:auto;
     #msg-btn-icon{
       padding-right:4px;
     }
-    
+   
  } 
 
  @media screen and (max-width: 500px) {
-  #logo{
-     
-     
-     margin-left:-50px;
-     
-       }
- 
-       #msg-body{
-   
-margin-left:31.5%;
-    }
+  #login-page{
+    font-size:10px!important;
+  }
+#home-page{
+  font-size:10px!important;
+}
+#syllabus-page{
+  font-size:10px!important;
+}
+#history-page{
+  font-size:10px!important;
+}
+
+
+
  } 
 
 
@@ -506,13 +541,14 @@ if ($result) {
     border-radius: 15px;
     border:2px solid #7c150c;
     height:40px;
+  
 
 
 
   }
 
 #result-of-search-by-name::-webkit-scrollbar {
-    display: none;
+    
 }
 
 input[type=search]::-webkit-search-cancel-button {
@@ -532,8 +568,8 @@ input[type=search]::-webkit-search-cancel-button {
     <form action="#">
       <input type="search" placeholder="       Search Product Here.." name="search" id="search-input" style="outline:none;">
 
-      <div id="result-of-search-by-name" style="position:absolute;width:1px;max-height:50px;background:white;border:1px solid black;display:none;border-radius:10px;">
-     
+      <div id="result-of-search-by-name" style="position:absolute;width:270px;max-height:400px;overflow: auto;background:white;border:1px solid black;display:none;border-radius:10px;">
+    
       </div>
       <div id="cart" id="msg-body" style="    width: 30%;float: right; display:none; ">
     <a href="cart.php">
