@@ -282,7 +282,7 @@ display: block;
 
 
      left: 50%;
-margin-left: -115px !important;
+margin-left: -75px !important;
 width: 100%;
 height: 65px !important;
     width: 70px!important;
@@ -349,7 +349,7 @@ margin-left: -97px !important;
   font-size:10px!important;
 }
 #history-page{
-  font-size:10px!important;
+font-size:10px!important;
 }
 
 
